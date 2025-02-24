@@ -3,10 +3,17 @@ import tensorflow as tf
 import numpy as np
 
 from PIL import Image
-
+import gdown
+import os
+file_id = "1Z7jCGa6lSrvKanellmqkCAMo-2p-YWGt"
+url = 'https://drive.google.com/file/d/1Z7jCGa6lSrvKanellmqkCAMo-2p-YWGt/view?usp=drive_link'
+model_path = "training_palnt_disease_model.keras"
+if not os.path.exists(model_path):
+    st.warning("Downloading model from Google Drive...")
+    gdown.download(url, model_path, quiet=False)
 # Load the trained model
-MODEL_PATH = "training_palnt_disease_model.keras"
-model = tf.keras.models.load_model(MODEL_PATH)
+
+model = tf.keras.models.load_model(model_path)
 
 # Define class names (update according to your dataset)
 class_names = ["Healthy", "Early Blight", "Late Blight"]
