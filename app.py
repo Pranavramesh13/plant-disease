@@ -10,7 +10,7 @@ url = 'https://drive.google.com/file/d/1Z7jCGa6lSrvKanellmqkCAMo-2p-YWGt/view?us
 model_path = "training_palnt_disease_model.keras"
 if not os.path.exists(model_path):
     st.warning("Downloading model from Google Drive...")
-    gdown.download(url, model_path, quiet=False)
+    gdown.download(url,model_path,quiet=False)
 # Load the trained model
 
 model = tf.keras.models.load_model(model_path)
