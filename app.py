@@ -27,15 +27,6 @@ def model_prediction(test_image):
 st.sidebar.title("Plant Disease Detection System for Sustainable Agriculture")
 app_mode = st.sidebar.selectbox("Select Page",["HOME","DISEASE RECOGNITION"])
 #app_mode = st.sidebar.selectbox("Select Page",["Home"," ","Disease Recognition"])
-
-# import Image from pillow to open images
-from PIL import Image
-img = Image.open("Diseases.png")
-
-# display image using streamlit
-# width is used to set the width of an image
-st.image(img)
-
 #Main Page
 if(app_mode=="HOME"):
     st.markdown("<h1 style='text-align: center;'>Plant Disease Detection System for Sustainable Agriculture", unsafe_allow_html=True)
